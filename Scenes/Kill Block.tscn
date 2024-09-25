@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dibvmqlvegakf"]
+
+[ext_resource type="PackedScene" uid="uid://cucqp8g44uj4d" path="res://Scenes/killzone.tscn" id="1_t1df1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dqqu"]
+size = Vector2(46, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" parent="." instance=ExtResource("1_t1df1")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_4dqqu")
