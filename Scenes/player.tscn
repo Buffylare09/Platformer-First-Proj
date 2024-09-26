@@ -163,9 +163,9 @@ radius = 5.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_hdebu")
-animation = &"idle"
+animation = &"new_animation"
 autoplay = "idle"
-frame_progress = 0.397541
+frame_progress = 0.501967
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
