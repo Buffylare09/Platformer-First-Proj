@@ -244,6 +244,10 @@ script = ExtResource("2_c5sxr")
 position = Vector2(-1, 3)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_uuafv")
