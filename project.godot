@@ -14,10 +14,6 @@ config/name="New Game Project"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
-[autoload]
-
-Checkpoint="*res://Scripts/Checkpoint.gd"
-
 [input]
 
 "move right"={

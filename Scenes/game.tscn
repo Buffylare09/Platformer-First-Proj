@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3dsm0kh8tg5a"]
+[gd_scene load_steps=18 format=3 uid="uid://d3dsm0kh8tg5a"]
 
-[ext_resource type="Script" path="res://Scripts/game.gd" id="1_rkp87"]
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_nrc6n"]
 [ext_resource type="PackedScene" uid="uid://b1uv3c2cbxbmu" path="res://Scenes/player.tscn" id="1_wp1lj"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="2_c5sxr"]
 [ext_resource type="Texture2D" uid="uid://c5m4nvnt1qo05" path="res://sprites/world_tileset.png" id="3_hptx4"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://t8fywc8flrsw" path="res://Scenes/grass platform.tscn" id="6_pkg17"]
 [ext_resource type="PackedScene" uid="uid://bnvdklyu1dg1a" path="res://Scenes/coin.tscn" id="7_m1sjk"]
 [ext_resource type="PackedScene" uid="uid://bltkvuic2j0l5" path="res://Scenes/slime.tscn" id="11_riprs"]
-[ext_resource type="PackedScene" uid="uid://g0m2dyjyt4v6" path="res://Scenes/Checkpoint.tscn" id="12_xy0m1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nr8i"]
 texture = ExtResource("3_hptx4")
@@ -234,7 +233,10 @@ _data = {
 distance = -53.0
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_rkp87")
+
+[node name="Game Manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_nrc6n")
 
 [node name="player" parent="." instance=ExtResource("1_wp1lj")]
 z_index = 5
@@ -263,22 +265,23 @@ layer_1/tile_data = PackedInt32Array(917489, 1, 13, -196623, 1, 13, -131087, 1, 
 position = Vector2(80, -42)
 
 [node name="Label" type="Label" parent="Labels"]
-offset_left = 1458.0
-offset_top = -123.0
-offset_right = 1766.0
-offset_bottom = -55.0
+texture_filter = 1
+offset_left = 1424.0
+offset_top = -87.0
+offset_right = 1791.0
+offset_bottom = -53.0
 theme_override_fonts/font = ExtResource("5_n23mf")
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 10
 text = "Totally need to jump here.."
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_o1lv3")
 
 [node name="Label2" type="Label" parent="Labels"]
-offset_left = -121.0
-offset_top = -117.0
-offset_right = 40.0
-offset_bottom = -49.0
+offset_left = -122.0
+offset_top = -43.0
+offset_right = 39.0
+offset_bottom = 25.0
 theme_override_fonts/font = ExtResource("5_n23mf")
 theme_override_font_sizes/font_size = 11
 text = "Good Luck..."
@@ -569,11 +572,5 @@ metadata/_edit_group_ = true
 [node name="slime3" parent="Slimes mn" instance=ExtResource("11_riprs")]
 z_index = 1
 position = Vector2(650, 17)
-
-[node name="Area2D" parent="." instance=ExtResource("12_xy0m1")]
-position = Vector2(632, -104)
-
-[node name="Area2D3" parent="." instance=ExtResource("12_xy0m1")]
-position = Vector2(3336, -280)
 
 [connection signal="ready" from="player" to="." method="_on_player_ready"]

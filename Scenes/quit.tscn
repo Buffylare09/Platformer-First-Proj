@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b67myw2d6enu0"]
 
 [ext_resource type="FontFile" uid="uid://dlshcayrgld2u" path="res://fonts/PixelOperator8.ttf" id="1_0v1m7"]
-[ext_resource type="Script" path="res://button.gd" id="2_afovw"]
+[ext_resource type="Script" path="res://Scripts/button.gd" id="2_afovw"]
 
 [node name="Node2D" type="Node2D"]
 

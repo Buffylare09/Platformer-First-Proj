@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b1uv3c2cbxbmu"]
+[gd_scene load_steps=29 format=3 uid="uid://b1uv3c2cbxbmu"]
 
 [ext_resource type="Texture2D" uid="uid://cuw4spkum08k4" path="res://sprites/knight.png" id="1_0ipce"]
 
@@ -33,6 +33,10 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_tr41d"]
 atlas = ExtResource("1_0ipce")
 region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d23nb"]
+atlas = ExtResource("1_0ipce")
+region = Rect2(64, 160, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qmayh"]
 atlas = ExtResource("1_0ipce")
@@ -136,6 +140,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_d23nb")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 120.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qmayh")
 }, {
 "duration": 1.0,
@@ -184,8 +196,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_pyb1b")
 }],
 "loop": true,
-"name": &"new_animation",
-"speed": 20.0
+"name": &"run",
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pcka6"]
@@ -197,9 +209,8 @@ collision_layer = 2
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_hdebu")
-animation = &"DEATH"
-autoplay = "idle"
-frame_progress = 0.68348
+animation = &"jump"
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
