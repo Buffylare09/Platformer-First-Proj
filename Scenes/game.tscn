@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d3dsm0kh8tg5a"]
+[gd_scene load_steps=19 format=3 uid="uid://d3dsm0kh8tg5a"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_nrc6n"]
 [ext_resource type="PackedScene" uid="uid://b1uv3c2cbxbmu" path="res://Scenes/player.tscn" id="1_wp1lj"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://t8fywc8flrsw" path="res://Scenes/grass platform.tscn" id="6_pkg17"]
 [ext_resource type="PackedScene" uid="uid://bnvdklyu1dg1a" path="res://Scenes/coin.tscn" id="7_m1sjk"]
 [ext_resource type="PackedScene" uid="uid://bltkvuic2j0l5" path="res://Scenes/slime.tscn" id="11_riprs"]
+[ext_resource type="PackedScene" uid="uid://ddw3q0yqiiayl" path="res://Scenes/music.tscn" id="12_5xtyp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nr8i"]
 texture = ExtResource("3_hptx4")
@@ -238,12 +239,12 @@ distance = -53.0
 unique_name_in_owner = true
 script = ExtResource("1_nrc6n")
 
-[node name="player" parent="." instance=ExtResource("1_wp1lj")]
+[node name="player" parent="Game Manager" instance=ExtResource("1_wp1lj")]
 z_index = 5
 position = Vector2(1, -3)
 script = ExtResource("2_c5sxr")
 
-[node name="Camera2D2" parent="player" instance=ExtResource("4_f1dga")]
+[node name="Camera2D2" parent="Game Manager/player" instance=ExtResource("4_f1dga")]
 position = Vector2(-1, 3)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
@@ -251,6 +252,20 @@ drag_left_margin = 0.1
 drag_top_margin = 0.1
 drag_right_margin = 0.1
 drag_bottom_margin = 0.1
+
+[node name="Score label" type="Label" parent="Game Manager"]
+texture_filter = 1
+offset_left = -113.0
+offset_top = -89.0
+offset_right = 254.0
+offset_bottom = -55.0
+theme_override_fonts/font = ExtResource("5_n23mf")
+theme_override_font_sizes/font_size = 10
+text = "You got x coins"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("6_o1lv3")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_uuafv")
@@ -278,10 +293,10 @@ vertical_alignment = 1
 script = ExtResource("6_o1lv3")
 
 [node name="Label2" type="Label" parent="Labels"]
-offset_left = -122.0
-offset_top = -43.0
-offset_right = 39.0
-offset_bottom = 25.0
+offset_left = -137.0
+offset_top = -120.0
+offset_right = 24.0
+offset_bottom = -52.0
 theme_override_fonts/font = ExtResource("5_n23mf")
 theme_override_font_sizes/font_size = 11
 text = "Good Luck..."
@@ -573,4 +588,6 @@ metadata/_edit_group_ = true
 z_index = 1
 position = Vector2(650, 17)
 
-[connection signal="ready" from="player" to="." method="_on_player_ready"]
+[node name="Music" parent="." instance=ExtResource("12_5xtyp")]
+
+[connection signal="ready" from="Game Manager/player" to="." method="_on_player_ready"]
