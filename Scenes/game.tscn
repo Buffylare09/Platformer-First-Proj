@@ -255,7 +255,7 @@ script = ExtResource("1_nrc6n")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Game Manager"]
 
-[node name="Score label" type="Label" parent="Game Manager/CanvasLayer"]
+[node name="Score label" type="Label" parent="Game Manager"]
 texture_filter = 1
 offset_left = -169.0
 offset_top = -65.0
