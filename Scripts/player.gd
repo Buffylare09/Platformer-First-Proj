@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var animation_player: AnimationPlayer = $CollisionShape2D/AnimationPlayer
 
 @onready var animated_sprite = $AnimatedSprite2D
 const SPEED = 130.0
@@ -13,7 +14,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+		animation_player.play("Jump")
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move left", "move right")
