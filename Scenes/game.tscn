@@ -243,10 +243,10 @@ script = ExtResource("1_nrc6n")
 [node name="CanvasLayer" type="CanvasLayer" parent="Game Manager"]
 
 [node name="Score label" parent="Game Manager" instance=ExtResource("5_o4e7l")]
-offset_left = -280.0
-offset_top = -86.0
-offset_right = 87.0
-offset_bottom = -52.0
+offset_left = 5276.0
+offset_top = -319.0
+offset_right = 5643.0
+offset_bottom = -285.0
 
 [node name="player" parent="." instance=ExtResource("1_wp1lj")]
 z_index = 5

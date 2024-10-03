@@ -13,9 +13,7 @@ func _on_body_entered(body) -> void:
 	Engine.time_scale = .5
 	animation_player.play("Death")
 	body.get_node("CollisionShape2D").queue_free()
-	
 	timer.start(.5)
-	
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1
 	
