@@ -3,6 +3,7 @@ extends Area2D
 @onready var timer = $Timer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var animation_player: AnimationPlayer = $Timer/AnimationPlayer
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
@@ -11,6 +12,7 @@ func _on_body_entered(body) -> void:
 	print("death")
 	Engine.time_scale = .5
 	body.get_node("CollisionShape2D").queue_free()
+	animation_player.play("Death")
 	timer.start(.5)
 	
 func _on_timer_timeout() -> void:
